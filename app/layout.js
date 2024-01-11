@@ -1,9 +1,15 @@
-import {Barlow, Inter} from 'next/font/google';
+import {Barlow} from 'next/font/google';
+import localFont from 'next/font/local';
 
 import './globals.css';
 import Header from './src/components/common/Header';
 
-const inter = Inter({subsets: ['latin']});
+// const inter = Inter({subsets: ['latin']});
+
+const myFont = localFont({
+  src: './fonts/PretendardVariable.woff2',
+  display: 'swap',
+});
 
 const barlow = Barlow({
   display: 'swap',
@@ -20,9 +26,9 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang="ko">
-      <body className={`${inter.className}, ${barlow.variable}`}>
+      <body className={`${myFont.className} ${barlow.variable}`}>
         <Header />
-        {children}
+        <div>{children}</div>
       </body>
     </html>
   );

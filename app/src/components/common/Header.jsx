@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 z-10 w-full h-[105px] flex justify-between items-center ${
+      className={`sticky top-0 left-0 z-10 w-full h-[105px] flex justify-between items-center px-10 ${
         position === 0 ? 'bg-transparent' : 'bg-black'
       }`}>
       <Link href={'/'}>
@@ -31,7 +31,7 @@ function Header() {
           width={0}
           height={0}
           sizes="100%"
-          style={{maxHeight: '105px', width: '100%'}}
+          style={{maxHeight: '105px', width: '90%'}}
         />
       </Link>
       <nav className="flex gap-8">
@@ -43,7 +43,7 @@ function Header() {
           );
         })}
       </nav>
-      <div></div>
+      <div className="w-[350px] h-105 max-xl:hidden"></div>
     </header>
   );
 }
